@@ -8,7 +8,8 @@ exports.getAddProduct = (req, res, next) => {
   });
 }
  
-const a = 7 
+const a = 7;
+
 
 exports.postAddProduct = (req, res, next) => {
   const title = req.body.title;
