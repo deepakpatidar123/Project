@@ -7,9 +7,6 @@ exports.getAddProduct = (req, res, next) => {
     editing: false
   });
 }
- 
-const a = 7;
-
 
 exports.postAddProduct = (req, res, next) => {
   const title = req.body.title;
@@ -23,13 +20,13 @@ exports.postAddProduct = (req, res, next) => {
     description: description
   })
   .then(result => {
-    // console.log(result);
+    //console.log(result);
     console.log('Created Product');
-    res.render('/admin/products')
-  }).catch(err => {
+  })
+  .catch(err => {
     console.log(err);
   });
-};
+}
 
 exports.getEditProduct = (req, res, next) => {
   const editMode = req.query.edit;
