@@ -7,7 +7,8 @@ const errorController = require('./controllers/error');
 
 const sequelize = require('./util/database');
 
- const User = require('./models/user');
+//  const User = require('./models/user');
+ const  Expense = require('./models/Expense')
 var cors = require('cors');
 
 const app = express();
@@ -19,7 +20,8 @@ app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
-const userRoutes = require('./routes/user')
+const userRoutes = require('./routes/user');
+const expenseRoutes = require('./routes/Expense')
 
 
 app.use(bodyParser.json({ extended: false }));
@@ -27,7 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
-app.use(userRoutes)
+app.use(userRoutes);
+app.use(expenseRoutes);
 
 // app.post('/user/add-user' , async (req, res, next)=> {
 
